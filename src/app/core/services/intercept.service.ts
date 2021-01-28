@@ -13,7 +13,6 @@ export class InterceptService implements HttpInterceptor {
 		request: HttpRequest<any>,
 		next: HttpHandler
 	): Observable<HttpEvent<any>> {
-    console.log('intercept')
     const reqUrl = request.clone({
       url:`${request.url}?${environment.MARVEL_AUTHORIZATION_API}`
     })

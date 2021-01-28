@@ -36,7 +36,6 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
     this.store.select(MarvelSelectors.getMarvel).subscribe((response) => {
       if (response) {
-        console.log("marvels", response);
         this.typeSearch = response.type ? response.type : null;
       }
     });
@@ -81,7 +80,6 @@ export class ToolbarComponent implements OnInit {
     return character && character.name ? character.name : "";
   }
   applySearch() {
-    console.log("query", this.searchControl.value);
     this.characters = this.charactersFilter;
     this.loadingProductService = false;
     this.filteredCharacters = of([]);

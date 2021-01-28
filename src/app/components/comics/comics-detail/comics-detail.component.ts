@@ -26,7 +26,6 @@ export class ComicsDetailComponent implements OnInit,OnDestroy {
 
   ngOnInit() {
     this.comic = this.dataDialog.comic ? this.dataDialog.comic :null;
-    console.log('select')
     if(this.comic){
       this.price = this.comic.prices.find(price=>price.type=='digitalPurchasePrice');
     }

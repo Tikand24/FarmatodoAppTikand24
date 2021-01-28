@@ -32,7 +32,6 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    console.log("queryInit", this.route.snapshot.queryParamMap.get("query"));
     if (!this.route.snapshot.queryParamMap.get("query")) {
       this.marvelService
         .getCharactersList()
@@ -46,7 +45,6 @@ export class CharacterListComponent implements OnInit, OnDestroy {
     const sub = this.store
       .select(MarvelSelectors.getMarvel)
       .subscribe((response) => {
-        console.log('qeuryChacar',response)
         if (response) {
           this.characters = response.results ? response.results : null;
         }

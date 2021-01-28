@@ -13,7 +13,6 @@ export class CharacterDetailComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public dataDialog) { }
 
   ngOnInit() {
-    console.log('data',this.dataDialog)
   }
 
 }
