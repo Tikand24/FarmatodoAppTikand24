@@ -1,0 +1,12 @@
+.img-comic {
+  object-position: right center;
+  width: 200px;
+  height: 280px;
+}
+
+.trash {
+  position: absolute;
+  margin-left: 62%;
+  margin-top: -15px;
+  cursor: pointer;
+}

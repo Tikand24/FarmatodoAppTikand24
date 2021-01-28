@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <span [routerLink]="'/'">MARVEL</span>
+  <mat-form-field class="example-form-field">
+    <input type="text" matInput [formControl]="searchControl" placeholder="" [matAutocomplete]="auto" (keyup.enter)="applySearch()">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="optionSelected($event)">
+      <ng-container *ngIf="charactersFilter.length > 0">
+        <mat-option *ngFor="let option of filteredCharacters | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </ng-container>
+      <ng-container *ngIf="charactersFilter.length <= 0">
+        <mat-option [value]="null">
+          {{ loadingProductService ? 'Buscando...' : 'No existen datos' }}
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </mat-form-field>
+</mat-toolbar>
+<div class="right" *ngIf="marvels">
+  <h3>Tareas:</h3>
+  <ul>
+    <li *ngFor="let marvel of marvels | async">
+      <h3>{{ marvel.name }}</h3>
+    </li>
+  </ul>
+</div>

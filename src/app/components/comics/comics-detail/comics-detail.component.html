@@ -1,0 +1,32 @@
+<div>
+  <div mat-dialog-content>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <img [src]="comic.thumbnail.path +'.'+comic.thumbnail.extension" alt="..." class="img-portrait">
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+          <div class="card-body">
+            <h4 class="card-title">{{ comic.title }}</h4>
+            <p class="card-text">{{ comic.description }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div [ngClass]="{'btn-addfavourites': !isFavourite,'btn-favourites': isFavourite}" (click)="addFavourites()">
+            <img [src]=" !isFavourite ? 'assets/icons/btn-favourites-default.png':'assets/icons/btn-favourites-primary.png'"
+              class="mr-2" alt="favourite icon" /> <span
+              class="fw-bold">{{isFavourite ? 'ADDED TO FAVOURITES' :'ADD FAVOURITES'}}</span>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="btn-buy"><img src="assets/icons/shopping-cart-primary.png" class="mr-2" alt="favourite icon" />
+            <span class="fw-bold">BUY FOR $ <ng-container *ngIf="price">{{ price.price }}</ng-container></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

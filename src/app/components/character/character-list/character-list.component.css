@@ -1,0 +1,17 @@
+.img-rounded {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: right center;
+  width: 200px;
+  height: 200px;
+  transform: rotate(-20deg);
+  transition-property: transform, object-position;
+  transition-duration: 0.2s, 0.2s;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.img-rounded:hover {
+  object-position: left center;
+  transform: rotate(0deg) scale(1.5);
+}

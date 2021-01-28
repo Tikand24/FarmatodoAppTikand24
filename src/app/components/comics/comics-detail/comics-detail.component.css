@@ -1,0 +1,46 @@
+.btn-favourites{
+  text-align: center;
+  color: #eb0808;
+  padding: 1.4em;
+  background-color: rgb(50, 40, 40);
+  cursor: pointer;
+}
+.btn-addfavourites {
+  text-align: center;
+  color: #3d3333;
+  padding: 1.4em;
+  background-color: rgb(241, 240, 240);
+  cursor: pointer;
+}
+
+.btn-buy {
+  text-align: center;
+  color: #eb0808;
+  padding: 1.4em;
+  background-color: #dcdcdc;
+  cursor: pointer;
+}
+.btn-addfavourites:hover {
+  text-align: center;
+  color: #3d3333;
+  padding: 1.4em;
+  background-color: rgb(226, 226, 226);
+  cursor: pointer;
+}
+
+.btn-buy:hover {
+  text-align: center;
+  color: #eb0808;
+  padding: 1.4em;
+  background-color: #c9c9c9;
+  cursor: pointer;
+}
+
+.fw-bold {
+  font-weight: bold !important;
+}
+
+.img-portrait {
+  width: 168px;
+height: 252px;
+}

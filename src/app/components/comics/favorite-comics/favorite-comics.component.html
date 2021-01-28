@@ -1,0 +1,27 @@
+<div>
+  <div class="text-center">
+    <div class="d-flex flex-row mt-2 mb-2">
+      <div class="d-inline p-2">
+        <img src="assets/icons/favourites.png" />
+      </div>
+      <div class="d-inline p-2">
+        <h2>My favourites</h2>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngFor="let favourite of favourites">
+    <div class="row mb-5 text-center">
+      <div class="col-sm-12">
+        <div class="trash">
+          <img [src]="'assets/icons/btn-delete.png'" (click)="removeFavorite(favourite)" />
+        </div>
+        <div>
+          <img [src]="favourite.thumbnail.path +'.'+favourite.thumbnail.extension" class="img-comic" alt="No existe imagen"/>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <h3>{{ favourite.title }}</h3>
+      </div>
+    </div>
+  </ng-container>
+</div>
