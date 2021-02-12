@@ -1,4 +1,18 @@
-.example-form-field{
-    width: 100%;
-    margin: 20%;
-  }
+.example-form-field {
+  width: 50%;
+  margin: 20% 20% 20% 5%;
+}
+
+.mv-logo {
+  height: 100px;
+  width: 100px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.app-toolbar {
+  width:100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}

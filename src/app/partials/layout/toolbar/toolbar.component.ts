@@ -17,12 +17,15 @@ import { MatAutocompleteSelectedEvent } from "@angular/material";
   styleUrls: ["./toolbar.component.css"],
 })
 export class ToolbarComponent implements OnInit {
+  public STATES = {
+    SEARCHING_CHARACTER: false,
+    NOT_RESULTS: false,
+  };
   public characters: any[] = [];
   public typeSearch = null;
 
   public searchControl = new FormControl();
   public filteredCharacters: Observable<any[]>;
-  public loadingProductService: boolean = false;
   public charactersFilter: any[] = [];
   public marvels: Observable<Marvel[]>;
 
@@ -42,9 +45,12 @@ export class ToolbarComponent implements OnInit {
     this.searchControl.valueChanges
       .pipe(
         startWith(""),
-        tap(() => {
-          this.charactersFilter = [];
-          this.loadingProductService = true;
+        tap((data) => {
+          if(data){
+            this.charactersFilter = [];
+            this.STATES.SEARCHING_CHARACTER = true;
+            this.STATES.NOT_RESULTS = false;
+          }
         }),
         debounceTime(500),
         map((value) => (typeof value === "string" ? value : value.name))
@@ -71,7 +77,10 @@ export class ToolbarComponent implements OnInit {
           this.charactersFilter =
             response && response.data ? response.data.results : [];
           this.filteredCharacters = of(this.charactersFilter);
-          this.loadingProductService = false;
+          this.STATES.SEARCHING_CHARACTER = false;
+          this.charactersFilter.length <= 0
+            ? (this.STATES.NOT_RESULTS = true)
+            : (this.STATES.NOT_RESULTS = false);
         }
       })
       .catch((err) => err);
@@ -81,7 +90,7 @@ export class ToolbarComponent implements OnInit {
   }
   applySearch() {
     this.characters = this.charactersFilter;
-    this.loadingProductService = false;
+    this.STATES.SEARCHING_CHARACTER = false;
     this.filteredCharacters = of([]);
     this.store.dispatch(
       new MarvelActions.SetMarvel({

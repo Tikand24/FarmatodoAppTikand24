@@ -10,7 +10,7 @@
     </div>
   </div>
   <ng-container *ngFor="let favourite of favourites">
-    <div class="row mb-5 text-center">
+    <div class="row mb-5 favorite-comic">
       <div class="col-sm-12">
         <div class="trash">
           <img [src]="'assets/icons/btn-delete.png'" (click)="removeFavorite(favourite)" />

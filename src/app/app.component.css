@@ -1,13 +1,18 @@
-
-
 .container-main {
-  max-width: 1600px;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.bg-main {
+  background-color: rgb(236, 236, 236)
+}
+
+.mini-container {
+  padding-right: 50px;
+  padding-left: 50px;
   margin-left: auto;
   margin-right: auto;
-}
-.bg-main{
-  background-color: rgb(236, 236, 236)
 }

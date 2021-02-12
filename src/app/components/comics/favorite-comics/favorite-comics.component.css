@@ -6,7 +6,46 @@
 
 .trash {
   position: absolute;
-  margin-left: 62%;
+  margin-left: 34vw;
   margin-top: -15px;
   cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .trash {
+    position: absolute;
+    margin-left: 24vw;
+    margin-top: -15px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .trash {
+    position: absolute;
+    margin-left: 14vw;
+    margin-top: -15px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trash {
+    position: absolute;
+    margin-left: 14vw;
+    margin-top: -15px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1399px) {
+  .trash {
+    position: absolute;
+    margin-left: 9vw;
+    margin-top: -15px;
+    cursor: pointer;
+  }
+}
+.favorite-comic{
+  margin-left: 30px;
 }

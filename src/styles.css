@@ -1,4 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #e4e3e3; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #e4e3e3;
+}
+
+.mv-ml-5 {
+  margin-left: 5px !important;
+}
+
+.mv-ml-10 {
+  margin-left: 10px !important;
+}
+
+.mv-ml-15 {
+  margin-left: 15px !important;
+}
+
+.mv-ml-20 {
+  margin-left: 20px !important;
+}
+
+.mv-ml-40 {
+  margin-left: 40px !important;
+}
+
+.mv-ml-60 {
+  margin-left: 60px !important;
+}
+
+.mv-ml-80 {
+  margin-left: 80px !important;
+}
+
+.cursor {
+    cursor: pointer;
+}
+.border{
+  border: 8px solid #dee2e6 !important;
+  border-radius: 3%;
+}
